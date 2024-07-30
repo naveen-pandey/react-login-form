@@ -1,9 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './LoginForm.css';
 import { FaUser, FaLock } from "react-icons/fa";
 
 
+
 const LoginForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Username:', username);
+    console.log('Password:', password);
+
+    setUsername('');
+    setPassword('');
+  };
+
+
   return (
     <div className='wrapper'>
         <form action="">
